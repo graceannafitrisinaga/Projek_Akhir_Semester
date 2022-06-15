@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Membuat layout menggunakan LinearLayout.
+ lebar dan tinggi layout menggunakan atribut match_parent
+ background diberi warna purle_200 yang telah diinisiasi pada file colors.xml
+ orientasi yang digunakan adalah vertikal-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple_200"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <!-- menggunakan linear layout untuk membuat layout paling atas
+     dengan lebar layout match_parent dan tinggi layout wrap_content
+     margin layout 8dp, layout diberi gravity tengah, dan orientasi horizontal-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <!-- Menambahkan judul layout menggunakan textview
+         dengan lebar layout 0dp dan tinggi layout menggunakan atribut wrap_content
+         teks diberi jenis sans-serif, warna putih, dan ukuran teks 50sp-->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif"
+            android:text="Diary Digital"
+            android:textColor="@color/white"
+            android:textSize="50sp" />
+
+        <!-- Membuat tombol X menggunakan button
+         tinggi dan lebar button 40dp, diberi warna button merah
+         dan warna teks hitam-->
+        <Button
+            android:id="@+id/deleteAll"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="10dp"
+            android:backgroundTint="@color/red"
+            android:text="X"
+            android:textAllCaps="false"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+    <!-- Membuat layout kedua sebagai tampilan file yang disimpan menggunakan frameLayout
+     dengan lebar dan tinggi layout menggunakan atribut match_parent-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- membuat widget recyclerview agar tampilan file pada layout dapat di scroll
+        dengan lebar dan tinggi layout menggunakan match_parent,
+        warna layout ping-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/pink"
+            tools:listitem="@layout/view" />
+
+        <!-- Membuat tombol tambah (+) menggunakan button agar dapat menambahkan file
+         tinggi dan lebar button 60dp, diberi gravity center bottom,
+         diberi backround menggunakan file circular_button.xml yang ada dalam folder drawable
+         dan diberi warna teks putih, ukuran teks 25sp-->
+        <Button
+            android:id="@+id/add"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center|bottom"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/circular_button"
+            android:text="+"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
+    </FrameLayout>
+</LinearLayout>
+
+
+

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Membuat layout menggunakan LinearLayout.
+ lebar layout menggunakan match_parent dan tinggi layout menggunakan atribut wrap_content
+ dan padding 7dp -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="7dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Membuat cardview menggunakan widget cardview
+    dengan lebar layout menggunakan match_parent dan tinggi layout menggunakan wrap_content
+    warna backround purple_200 yang ada dalam file colors.xml-->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/purple_200"
+        android:elevation="3dp"
+        app:cardBackgroundColor="#ECEAEA"
+        app:cardCornerRadius="10dp">
+
+        <!-- Membuat layout menggunakan linearLayout
+         dengan lebar dan tinggi layout menggunakan atribut match_parent
+         orientasi yang digunakan vertikal, dan padding 10dp-->
+        <LinearLayout
+            android:id="@+id/mylayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <!-- Membuat tampilan nama file dan isi file menggunakan textView -->
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:text="your diary will go here"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/priority"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="sans-serif"
+                android:text="Feelings - High"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

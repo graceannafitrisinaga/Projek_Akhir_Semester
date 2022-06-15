@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Membuat layout menggunakan LinearLayout.
+ lebar dan tinggi layout menggunakan atribut match_parent
+ background diberi warna teal_200 yang telah diinisiasi pada file colors.xml
+ diberi gravity rata tengah, orientasi yang digunakan adalah vertikal-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/teal_200"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".UpdateCard">
+
+    <!-- Menambahkan judul layout menggunakan textview
+         dengan lebar layout match_parent dan tinggi layout menggunakan atribut wrap_content
+         teks diberi jenis sans-serif, diberi gravity center, warna teks putih, dan ukuran teks 36sp-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="Update Diary"
+        android:textColor="@color/white"
+        android:textSize="36sp" />
+
+    <!-- Menambahkan inputan user menggunakan EditText untuk id create_title dan id create_priority
+     dengan lebar layout match_parent dan tinggi layout menggunakan atribut wrap_content
+     padding 15dp, warna teks hitam, dan ditambahkan teks yang nantinya akan hilang ketika user menginputkan teks-->
+    <EditText
+        android:id="@+id/create_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@android:drawable/button_onoff_indicator_off"
+        android:hint="File Name"
+        android:padding="15dp"
+        android:textColor="@color/black"
+        android:textColorHint="#BFBBBB" />
+
+    <EditText
+        android:id="@+id/create_priority"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@android:drawable/button_onoff_indicator_off"
+        android:hint="Feelings..."
+        android:padding="15dp"
+        android:textColor="@color/black"
+        android:textColorHint="#BFBBBB" />
+
+    <!-- Membuat layout kedua menggunakan linearLayout
+     dengan lebar layout 250dp, tinggi layout menggunakan atribut wrap_content
+     dan orientassi menggunakan horizontal-->
+    <LinearLayout
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:orientation="horizontal">
+
+        <!-- Membuat tombol update menggunakan button
+         dengan tinggi dan lebar layout menggunakan atribut wrap_content-->
+        <Button
+            android:id="@+id/update_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!-- Membuat tombol delete menggunakan button
+         dengan tinggi dan lebar layout menggunakan atribut wrap_content
+         dan warna backround button merah-->
+        <Button
+            android:id="@+id/delete_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/red"
+            android:text="Delete" />
+    </LinearLayout>
+
+</LinearLayout>
